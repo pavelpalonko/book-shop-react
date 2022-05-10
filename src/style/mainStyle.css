@@ -1,0 +1,29 @@
+
+#root {
+    display: flex;
+    justify-content: center;
+}
+
+.App {
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* HEADER */
+
+.header {
+    width: 1000px;
+    height: 120px;
+    background-color: aqua;
+}
+
+/* FOOTER */
+
+.footer {
+    width: 800px;
+    height: 100px;
+    background-color: blueviolet;
+}

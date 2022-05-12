@@ -1,0 +1,30 @@
+
+ul {
+    list-style: none;
+}
+
+.menuName {
+    font-size: 20px;
+    margin-left: 20px;
+    position: relative;
+}
+
+.subMenu {
+    display: none;
+    position: absolute;
+    top: 20;
+    width: 100px;
+    background-color: red; 
+}
+
+.menuName:hover .subMenu {
+    display: block;
+}
+
+.subMenu li {
+    padding: 5px;
+}
+
+.subMenu li:hover {
+    font-size: 30px;
+}

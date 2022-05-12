@@ -1,0 +1,17 @@
+.myInput {
+    outline: none;
+    width: 200px;
+    height: 30px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 2px solid black;
+    background: none ;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.myInput:focus {
+    box-shadow: 0 2px 5px;
+}
+

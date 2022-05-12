@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 
 #root {
     display: flex;
@@ -12,13 +18,46 @@
 }
 
 
+
+
+
 /* HEADER */
 
 .header {
-    width: 1000px;
+    width: 100%;
     height: 120px;
-    background-color: aqua;
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(146,52,217,1) 100%);;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 10px 10px;
 }
+
+.header_wrapper {
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    justify-content:  space-between;
+}
+
+.wrapper_sort--category {
+    display: flex;
+    align-items: flex-end;
+}
+
+
+/* BOOKS */
+
+.books_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+
+
 
 /* FOOTER */
 

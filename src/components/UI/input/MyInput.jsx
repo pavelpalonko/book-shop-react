@@ -1,11 +1,14 @@
 import React from "react";
 import classes from "./MyInput.module.css"
+import { useDispatch } from "react-redux";
 
-const MyInput = () => {
+const MyInput = ({action}) => {
+
+  const dispatch = useDispatch()
 
   return (
     <>
-      <input placeholder="search" className={classes.myInput} type="text" />
+      <input onChange={(e) => dispatch(action(e.target.value))} placeholder="search" className={classes.myInput} type="text" />
     </>
   )
 }

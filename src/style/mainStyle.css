@@ -19,8 +19,6 @@
 
 
 
-
-
 /* HEADER */
 
 .header {
@@ -47,7 +45,7 @@
 }
 
 
-/* BOOKS */
+/* BOOKS-WRAPPER */
 
 .books_wrapper {
     display: flex;
@@ -55,6 +53,13 @@
 }
 
 
+
+/* BOOK */
+
+.book_description {
+    display: flex;
+    justify-content: space-around;
+}
 
 
 

@@ -15,3 +15,14 @@
     box-shadow: 0 2px 5px;
 }
 
+.delet {
+    background-color: none;
+    position: absolute;
+    right: 0px;
+    border: none;
+    padding: 2px;
+}
+
+.wrapperMyInput {
+    position: relative;
+}

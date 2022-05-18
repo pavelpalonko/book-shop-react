@@ -4,7 +4,8 @@
     border: 5px dashed rgb(132, 14, 179);
     border-radius: 100px;
     animation: rotate 2s infinite linear ;
-    margin-bottom: 200px;
+    margin-bottom: 1000px;
+    margin-top: 300px;
 }
 
 @keyframes rotate {

@@ -1,0 +1,7 @@
+.myTxt {
+    margin-top: 10px;
+    width: 100%;
+    border: 2px green solid;
+    display: block;
+    outline: none;
+}

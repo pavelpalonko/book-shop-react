@@ -1,0 +1,17 @@
+.outerWrapper {
+    display: flex;
+}
+
+.sliderWrapper {
+    border: 2px solid black;
+    width: 900px;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.booksWrapper {
+    display: flex;
+    transition: margin-left 0.5s;
+    /* transform: translate(-448px); */
+
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import Sort from "./UI/sortList/Sort";
-import MyInput from "./UI/input/MyInput";
+import SearchInput from "./UI/search-input/SearchInput";
 import { searchBooks, categoryBooks, sortedBooks } from "../store/actionCreators/filtActions";
 
 const BookFilter = () => {
@@ -10,7 +10,7 @@ const BookFilter = () => {
 
   return (
     <div className="header_wrapper">
-      <MyInput action={searchBooks} />
+      <SearchInput action={searchBooks} />
       <div className="wrapper_sort--category ">
         <Sort action={sortedBooks} id='sort' name='Sorded' list={sort} />
         <Sort action={categoryBooks} id='category' name='Categories' list={categories} />

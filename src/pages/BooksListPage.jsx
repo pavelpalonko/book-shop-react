@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { asyncFetchBookAction } from "../store/asyncActionCreator/asyncFetchBookAction";
 import { useFilter } from "../hooks/useFilter";
 import Loader from "../components/UI/loader/Loader";
+import Footer from "../components/Footer";
 
 const BooksListPage = () => {
   const dispatch = useDispatch()
@@ -16,7 +17,7 @@ const BooksListPage = () => {
 
   useEffect(() => {
     dispatch(asyncFetchBookAction())
-  },[])
+  },[dispatch])
 
   return (
     <>
@@ -25,7 +26,7 @@ const BooksListPage = () => {
         ? <Loader />
         : <BookList books={sortBooks} />
       }
-
+      <Footer/>
     </>
 
   )

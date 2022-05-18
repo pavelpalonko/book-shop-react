@@ -1,8 +1,7 @@
 import React from "react";
 import Book from "./Book";
-import Loader from "./UI/loader/Loader";
 
-const BookList = ({ books, isLoading }) => {
+const BookList = ({ books }) => {
 
   return (
     <div className="books_wrapper">
@@ -10,6 +9,7 @@ const BookList = ({ books, isLoading }) => {
         books.map((book) =>
           <Book
             key={book.id}
+            id={book.id}
             img={book.imageUrl}
             name={book.bookName}
             price={book.price}

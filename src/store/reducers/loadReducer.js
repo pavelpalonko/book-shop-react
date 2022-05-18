@@ -14,4 +14,3 @@ export const loadReducer = (state = defaultState, actions) => {
       return state
   }
 }
-

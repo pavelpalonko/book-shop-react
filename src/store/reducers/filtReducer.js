@@ -19,5 +19,3 @@ export const filtReducer = (state = defaultState, actions) => {
       return state
   }
 }
-
-

@@ -1,4 +1,5 @@
 import { useMemo } from "react"
+import { randomNumber } from "../components/utils/randomNumber"
 
 export const useFilter = (listBooks, filtParam) => {
 
@@ -19,6 +20,8 @@ function useSort (listBooks, query, sort, category) {
         return currentCategoryList.sort( (a, b) => b.bookRating - a.bookRating) 
       case 'rating 0':
         return currentCategoryList.sort( (a, b) => a.bookRating- b.bookRating) 
+      case 'reset':
+        return randomNumber(currentCategoryList)
       default:
         return currentCategoryList    
     }
@@ -52,21 +55,3 @@ function useSearchBooks (listBooks, query) {
 
   return foundBooks
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

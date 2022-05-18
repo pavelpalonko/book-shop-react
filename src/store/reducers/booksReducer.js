@@ -14,4 +14,3 @@ export const bookReducer = (state = defaultState, actions) => {
       return state
   }
 }
-

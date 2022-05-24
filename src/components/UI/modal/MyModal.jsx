@@ -1,12 +1,12 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import classes from "./MyModal.module.css"
-import { hideModal } from "../../../store/actionCreators/modalActions";
+import { hideModal } from "../../../store/actionCreators/checkActions";
 
 const MyModal = ({children}) => {
 
   const dispatch = useDispatch()
-  const isModal = useSelector(({modalR}) => modalR.isModal)
+  const isModal = useSelector(({checkR}) => checkR.isModal)
 
   const rootClasses = [classes.myModal]
 

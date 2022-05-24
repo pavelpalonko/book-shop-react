@@ -1,0 +1,7 @@
+.basketBookWrapp {
+    width: 1200px;
+    height: 300px;
+    border: 2px black solid;
+    margin: 30px;
+    display: flex;
+}

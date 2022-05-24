@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Book from "../../Book";
+import Book from "../book/Book";
 import classes from "./Slider.module.css"
 
 const Slider = ({ category }) => {

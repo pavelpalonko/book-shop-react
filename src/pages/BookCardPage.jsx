@@ -13,7 +13,7 @@ const BookIdPage = () => {
   const param = useParams()
   const books = useSelector(({ bookR }) => bookR.books)
 
-  const isLoading = useSelector(({ loadR }) => loadR.isLoading)
+  const isLoading = useSelector(({ checkR }) => checkR.isLoading)
   const [book = []] = books.filter((book) => book.id === +param.id)
 
   useEffect(() => {

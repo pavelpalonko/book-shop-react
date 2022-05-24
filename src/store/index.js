@@ -2,17 +2,17 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { bookReducer } from './reducers/booksReducer'
-import { loadReducer } from './reducers/loadReducer'
+import { checkReducer } from './reducers/checkReducer'
 import { filtReducer } from './reducers/filtReducer'
 import { commentsReducer } from './reducers/commentsReducers'
-import { modalReducer } from './reducers/modalReducer'
+import { basketReducer } from './reducers/basketReducer'
 
 const rootReducer = combineReducers({
   bookR:bookReducer,
-  loadR:loadReducer,
+  checkR:checkReducer,
   filtR:filtReducer,
   commR:commentsReducer,
-  modalR:modalReducer
+  baskR:basketReducer
 })
 
 export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))

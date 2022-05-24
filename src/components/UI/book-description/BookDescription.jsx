@@ -1,8 +1,15 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import classes from "./BookDescription.module.css"
+import { addBook } from "../../../store/actionCreators/basketActions";
+import { Link } from "react-router-dom";
 
 
-const BookDescription = ({ book }) => {
+const BookDescription = ({ currentBook }) => {
+
+  const dispatch = useDispatch()
+  const basketBooks = useSelector(({ baskR }) => baskR.booksBasket)
+  const checking = basketBooks.find((book) => book.id === currentBook.id)
 
   return (
     <div className={classes.bookDescriptionContainer}>
@@ -10,25 +17,31 @@ const BookDescription = ({ book }) => {
       <div className={classes.bookDescBuyBttnWrapp} >
         <div className={classes.bookImgDecsWrapp}>
 
-          <img className={classes.bookImg} src={book.imageUrl} alt='book'></img>
+          <img className={classes.bookImg} src={currentBook.imageUrl} alt='book'></img>
 
           <div>
-            <div className={classes.bookName}>{book.bookName}</div>
-            <div className={classes.bookAuthor}>{book.authorName}</div>
-            <div className={classes.bookRaiting}>{book.bookRating}</div>
+            <div className={classes.bookName}>{currentBook.bookName}</div>
+            <div className={classes.bookAuthor}>{currentBook.authorName}</div>
+            <div className={classes.bookRaiting}>{currentBook.bookRating}</div>
           </div>
 
         </div>
 
-        <div className={classes.buyBtnWrapp}>
-          <button className={classes.buyBtn} onClick={() => console.log(book.id)}>add to basket</button>
-        </div>
+        {
+          checking
+            ? <Link to='/basket-page' className={classes.buyBtnWrapp}>
+              <button className={classes.buyBtn} >GO to basket</button>
+            </Link>
+            : <div className={classes.buyBtnWrapp}>
+              <button className={classes.buyBtn} onClick={() => dispatch(addBook(currentBook))}>add to basket</button>
+            </div>
+        }
 
       </div>
 
       <div className={classes.descriptionWrapp}>
         <div className={classes.bookDescriptin}>Descriptoin</div>
-        <div>{book.description}</div>
+        <div>{currentBook.description}</div>
       </div>
 
     </div>

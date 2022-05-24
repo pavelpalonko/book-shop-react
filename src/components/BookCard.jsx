@@ -5,7 +5,7 @@ import FormItem from "./FormItem";
 import Slider from "./UI/slider/Slider";
 import Comment from "./UI/comment/Comment";
 import MyModal from "./UI/modal/MyModal";
-import { showModal } from "../store/actionCreators/modalActions";
+import { showModal } from "../store/actionCreators/checkActions";
 import MyButton from "./UI/my-button/MyButton";
 
 const BookCard = ({ book }) => {
@@ -18,7 +18,7 @@ const BookCard = ({ book }) => {
 
   return (
     <>
-      <BookDescription book={book} />
+      <BookDescription currentBook={book} />
 
       <Slider category={category} />
       <MyButton onClick={() => dispatch(showModal(true))}>ADD NEW COMMENT</MyButton>

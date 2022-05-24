@@ -1,5 +1,5 @@
 import React from "react";
-import Book from "./Book";
+import Book from "./UI/book/Book";
 
 const BookList = ({ books }) => {
 

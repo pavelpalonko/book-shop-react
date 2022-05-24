@@ -4,17 +4,19 @@ ul {
 }
 
 .menuName {
-    font-size: 20px;
-    margin-left: 20px;
     position: relative;
+    font-size: 20px;
+    font-weight: 300;
+    margin-left: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .subMenu {
     display: none;
     position: absolute;
-    top: 20;
-    width: 100px;
-    background-color: red; 
+    padding: 2px;
+    width: 160px;
+    left: calc(0% - 40px); 
 }
 
 .menuName:hover .subMenu {
@@ -22,9 +24,14 @@ ul {
 }
 
 .subMenu li {
-    padding: 10px;
+    text-align: center;
+    padding: 8px;
+    box-shadow: 3px 5px 5px;
+    border-bottom: 1px black solid;
+    background-color: rgb(224, 207, 207);
+    transition: 0.3s;
 }
 
 .subMenu li:hover {
-    background-color: aqua;
+    background-color: rgb(159, 165, 165);
 }

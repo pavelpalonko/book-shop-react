@@ -10,11 +10,11 @@ import Footer from "../components/Footer";
 const BooksListPage = () => {
   const dispatch = useDispatch()
   const books = useSelector(({ bookR }) => bookR.books)
-  const isLoading = useSelector(({ loadR }) => loadR.isLoading)
+  const isLoading = useSelector(({ checkR }) => checkR.isLoading)
   const filterParam = useSelector(({ filtR }) => filtR)
 
   const sortBooks = useFilter(books, filterParam)
-
+ 
   useEffect(() => {
     dispatch(asyncFetchBookAction())
   },[dispatch])

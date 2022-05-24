@@ -9,7 +9,7 @@ const SearchInput = ({ action }) => {
 
   return (
     <div className={classes.wrapperMyInput}>
-      <button onClick={() => dispatch(action(''))} className={classes.delet}>X</button>
+      <button onClick={() => dispatch(action(''))} className={classes.delet}>✖</button>
       <input
         value={query}
         onChange={(e) => dispatch(action(e.target.value))}

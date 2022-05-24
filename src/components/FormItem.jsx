@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addComment } from "../store/actionCreators/commentActions";
-import { hideModal } from "../store/actionCreators/modalActions";
+import { hideModal } from "../store/actionCreators/checkActions";
 import MyButton from "./UI/my-button/MyButton";
 import MyInput from "./UI/my-input/MyInput";
 import MyTextArea from "./UI/text-area/MyTextArea";

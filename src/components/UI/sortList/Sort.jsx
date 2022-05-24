@@ -2,8 +2,7 @@ import React from "react";
 import classes from "./Sort.module.css"
 import { useDispatch } from "react-redux";
 
-
-const Sort = ({id, list, name, action }) => {
+const Sort = ({ id, name, action, list, nameList }) => {
   const dispatch = useDispatch()
 
   return (
@@ -11,8 +10,13 @@ const Sort = ({id, list, name, action }) => {
       <li >{name}</li>
       <li>
         <ul className={classes.subMenu}>
-          {list.map(cell => (
-            <li id={id} onClick={(e) => dispatch(action(e.target.innerText))} key={cell} >{cell}</li>
+          {list.map((cell, ind) => (
+            <li
+              id={id}
+              data-category={cell}
+              key={cell}
+              onClick={(e) => dispatch(action(e.target.dataset.category))}
+            >{nameList[ind]}</li>
           ))}
         </ul>
       </li>

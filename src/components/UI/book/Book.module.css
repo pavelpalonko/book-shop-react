@@ -1,0 +1,22 @@
+.bookWrapper {
+    border: 2px solid black;
+    margin: 10px;
+    width: 204px;
+}
+
+.bookImage {
+    width: 200px;
+    height: 300px;
+}
+
+.bookDescription {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 17px;
+    line-height: 18px;
+    font-weight: bold;
+    background-color: rgb(233, 187, 128);
+    color: brown;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

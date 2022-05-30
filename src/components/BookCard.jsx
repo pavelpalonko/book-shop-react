@@ -15,20 +15,21 @@ const BookCard = ({ book }) => {
   const books = useSelector(({ bookR }) => bookR.books)
   const category = books.filter((book) => book.category === bookCategory)
   const comments = useSelector(({ commR }) => commR.comments)
+  const currentComments = comments.filter( (comment) => comment.bookId === book.id )
 
   return (
     <>
       <BookDescription currentBook={book} />
 
       <Slider category={category} />
-      <MyButton onClick={() => dispatch(showModal(true))}>ADD NEW COMMENT</MyButton>
+      <MyButton onClick={() => dispatch(showModal(true))}>Add a review ✎</MyButton>
 
       <MyModal>
-        <FormItem />
+        <FormItem bookId={book.id} />
       </MyModal>
 
-      {comments.map((comm) =>
-        <Comment key={comm.id} comment={comm} comments={comments} />
+      {currentComments.map((comm) =>
+        <Comment key={comm.commentId} comment={comm} comments={comments} />
       )}
     </>
   )

@@ -1,0 +1,107 @@
+.burgerBtn {
+    display: none;
+    margin-right: 10px;
+    margin-left: 10px;
+    min-width: 40px;
+    height: 30px;
+    z-index: 9999;
+    position: relative;
+}
+
+.shopCount {
+   display: none;
+}
+
+.iconBurger,
+.iconBurger:before,
+.iconBurger:after {
+    width: 100%;
+    height: 3px;
+    transition: 0.3s;
+}
+
+.iconBurger:before {
+    content: '';
+    margin-top: -10px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+}
+
+.iconBurger:after {
+    content: '';
+    margin-top: 10px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+}
+
+.iconBurger {
+    margin-top: 16px;
+    background-color: rgb(0, 0, 0);
+    display: block;
+}
+
+
+.iconBurger.iconBurgerActive:before {
+    transform: rotate(45deg);
+    transform-origin: 5.5px;
+}
+
+.iconBurger.iconBurgerActive:after {
+    transform: rotate(-45deg);
+    transform-origin: 5.5px;
+}
+
+.iconBurger.iconBurgerActive {
+    background-color: rgba(202, 202, 195);
+}
+
+
+
+
+.burgerMenu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 99999px;
+    width: 100%;
+    height: 100px;
+    top: -100px;
+    background-color: rgba(202, 202, 195);
+    position: absolute;
+    font-size: 20px;
+    transition: 0.5s;
+}
+
+.burgerMenuVisable {
+    align-items: center;
+    top: 0px;
+}
+
+.basketLinkWrapp {
+    position: relative;
+}
+
+.basketLink {
+    font-weight: 300;
+    color: black;
+}
+
+
+@media (max-width: 768px) {
+    .burgerBtn {
+        display: block;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .burgerMenu {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 768px) {
+    .burgerMenu {
+        display: none;
+    }
+}

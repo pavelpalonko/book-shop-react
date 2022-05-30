@@ -4,14 +4,14 @@ import { useParams } from "react-router-dom";
 import { asyncFetchBookAction } from "../store/asyncActionCreator/asyncFetchBookAction";
 import Loader from "../components/UI/loader/Loader"
 import BookCard from "../components/BookCard";
-import Header from "../components/Header";
-import Footer from "../components/Footer"
+import Error from "../components/UI/error/Error";
 
 const BookIdPage = () => {
 
   const dispatch = useDispatch()
   const param = useParams()
   const books = useSelector(({ bookR }) => bookR.books)
+  const isError = useSelector(({ bookR }) => bookR.fetchError)
 
   const isLoading = useSelector(({ checkR }) => checkR.isLoading)
   const [book = []] = books.filter((book) => book.id === +param.id)
@@ -22,13 +22,13 @@ const BookIdPage = () => {
 
   return (
     <>
-      <Header />
       {
         isLoading
           ? <Loader />
-          : <BookCard book={book} />
+          : isError
+            ? <Error />
+            : <BookCard book={book} />
       }
-      <Footer />
     </>
   )
 }

@@ -5,19 +5,20 @@
     border-top: 0;
     border-left: 0;
     border-right: 0;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
     background: none ;
     font-size: 17px;
-    padding: 10px;
+    padding: 5px 20px 5px 20px;
+    transition: 0.6s;
 }
 
 .myInput:focus {
-    box-shadow: 0 2px 5px;
+    background-color: rgb(228, 228, 217);
 }
 
 .delet {
     position: absolute;
-    right: 0px;
+    right: 2px;
     top: 2px;
     padding: 2px;
     font-size: 15px;
@@ -30,4 +31,16 @@
 
 .wrapperMyInput {
     position: relative;
+}
+
+@media (max-width: 480px) {
+    .myInput {
+        width: 160px;
+    }
+}
+
+@media (max-width: 320px) {
+    .myInput {
+        width: 120px;
+    }
 }

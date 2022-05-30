@@ -1,4 +1,4 @@
-import { fetchBooks } from "../actionCreators/bookActions"
+import { fetchBooks, fetchError } from "../actionCreators/bookActions"
 import { startLoading, endLoading } from "../actionCreators/checkActions"
 
 export const asyncFetchBookAction = () => {
@@ -10,7 +10,8 @@ export const asyncFetchBookAction = () => {
       dispatch(fetchBooks(result))
       dispatch(endLoading(false))
     } catch (error) {
-      console.log(error.message)
+      dispatch(fetchError(true))
+      console.log(error)
     } finally {
       dispatch(endLoading(false))
     }

@@ -3,21 +3,15 @@ import classes from "./basketBooks.module.css"
 
 const BasketBooks = ({ book, clearBooks, setBuyList }) => {
 
-  const [currentOrder, setCurrentOrder] = useState({ quantiti: 1, totalAmount: book.price })
+  const [currentOrder, setCurrentOrder] = useState({ bookId: book.id, quantiti: 1, bookPrice: book.price })
 
   const inc = () => {
-    setCurrentOrder({
-      quantiti: currentOrder.quantiti + 1,
-      totalAmount: currentOrder.totalAmount + book.price
-    })
+    setCurrentOrder({ ...currentOrder, quantiti: currentOrder.quantiti + 1 })
   }
 
   const dec = () => {
     if (currentOrder.quantiti === 1) return
-    setCurrentOrder({
-      quantiti: currentOrder.quantiti - 1,
-      totalAmount: currentOrder.totalAmount - book.price
-    })
+    setCurrentOrder({ ...currentOrder, quantiti: currentOrder.quantiti - 1 })
   }
 
   useEffect(() => {
@@ -28,19 +22,32 @@ const BasketBooks = ({ book, clearBooks, setBuyList }) => {
 
   return (
     <div className={classes.basketBookWrapp}>
-      <img style={{ border: '2px black solid' }} src={book.imageUrl} alt="book" />
-      <div>{book.price}</div>
+      <div className={classes.bookWrapp}>
+        <img className={classes.bookImage} src={book.imageUrl} alt="book" />
+        <div className={classes.bookDesc}>
+          <div className={classes.bookName}>{book.bookName}</div>
+          <div className={classes.authorName}>{book.authorName}</div>
+        </div>
+      </div>
 
-      <button onClick={dec}>A---A</button>
-      <div style={{ fontSize: '25px', width: '20px' }}>{currentOrder.quantiti}</div>
-      <button onClick={inc} >A+++A</button>
+      <div className={classes.calcWrapp}>
+        <div className={classes.counterWrapp}>
+          <button className={classes.counterBtn} onClick={dec}>-</button>
+          <div className={classes.counerNumber}>{currentOrder.quantiti}</div>
+          <button className={classes.counterBtn} onClick={inc} >+</button>
+        </div>
 
-      <div>{book.price}</div>
-      <div>X</div>
-      <div>{currentOrder.quantiti}</div>
-      <div>===</div>
-      <div>{currentOrder.totalAmount}</div>
-      <button onClick={() => clearBooks(book.id)}>XxxxxxxxxxX</button>
+        <div className={classes.counterRes}>
+          <div>{`${book.price}₴`}</div>
+          <div className={classes.counerSymbol}>*</div>
+          <div>{`${currentOrder.quantiti}pcs.`}</div>
+          <div className={classes.counerSymbol}>=</div>
+          <div>{`${currentOrder.bookPrice * currentOrder.quantiti}₴`}</div>
+        </div>
+      </div>
+
+
+      <button className={classes.deletBtn} onClick={() => clearBooks(book.id)}>✖</button>
     </div>
   )
 }

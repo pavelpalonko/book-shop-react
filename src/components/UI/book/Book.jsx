@@ -6,15 +6,28 @@ const Book = ({ img, name, price, rating, author, id }) => {
 
   const route = useNavigate()
 
+  const selectBook = () => { 
+    route(`/books-shop/${id}`)
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    })
+  }
+
   return (
-    <div className={classes.bookWrapper} onClick={()=>route(`/books-shop/${id}`)}>
-      <img className={classes.bookImage} src={img} alt="book" />
-      <div className={classes.bookDescription}>
-        <div>{`${price} ₴`}</div>
-        <div>{`${rating} ★`}</div>
+    <div className={classes.bookContainer}  onClick={selectBook}>
+      <div className={classes.bookWrapper}>
+        <img className={classes.bookImage} src={img} alt="book" />
+        <div className={classes.bookPrice}>
+          <div>{`${price} ₴`}</div>
+          <div>{`${rating} ★`}</div>
+        </div>
       </div>
-      <div>{name}</div>
-      <div>{author}</div>
+      <div className={classes.bookDescription}>
+        <div className={classes.bookAuthor}>{author}</div>
+        <div className={classes.bookName}>{name}</div>
+      </div>
     </div>
   )
 }

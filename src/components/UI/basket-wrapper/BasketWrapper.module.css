@@ -1,0 +1,36 @@
+.basketWrapper {
+    max-width: 1200px;
+    width: 100%;
+    margin: 200px 20px 0 20px;
+    padding: 0 20px 0 20px;
+    font-size: 20px;
+    font-weight: 300;
+    min-height: calc(100vh - 380px);
+}
+
+.basketHeadWrapp {
+    display: flex;
+    justify-content: space-between;
+}
+
+.totalSum {
+    margin-right: 10px;
+}
+
+.emptyBasket {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgBask {
+    width: 100px;
+}
+
+@media(max-width: 480px) {
+    .basketWrapper {
+        margin: 120px 20px 0 20px;
+        min-height: calc(100vh - 300px);
+    }
+}

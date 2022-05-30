@@ -1,10 +1,16 @@
 .myBtn {
+    width: 250px;
     padding: 5px;
-    color: green;
+    color: rgb(0, 0, 0);
     font-size: 16px;
-    border: 1px solid green;
+    border: 1px solid rgb(202, 202, 195);
     cursor: pointer;
-    background-color: white;
-    margin-top: 5px;
-    width: 124.5px;
+    background-color: rgb(202, 202, 195);
+    box-shadow: 0 3px 5px;
+    transition: 0.3s;
+}
+
+.myBtn:hover {
+    background-color: rgb(168, 168, 167);
+    border: 1px solid rgb(168, 168, 167);
 }

@@ -1,7 +1,7 @@
 const defaultState = {
   query: '',
   sort: '',
-  category: ''
+  category: 'all'
 }
 
 export const filtReducer = (state = defaultState, actions) => {

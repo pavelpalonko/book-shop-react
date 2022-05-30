@@ -1,7 +1,8 @@
 
 /* CONTAINERS */
 .bookDescriptionContainer{
-    margin-top: 150px;
+    margin: 150px 20px 0 20px;
+    max-width: 1200px;
 }
 
 .bookDescBuyBttnWrapp {
@@ -17,7 +18,9 @@
 
 /* OPTIONS */
 .bookImg {
-    border: 2px black solid;
+    width: 240px;
+    height: 360px;
+    box-shadow: 0 12px 10px;
     margin-right: 20px;
 }
 
@@ -40,28 +43,77 @@
 
 /* BUTTON */
 .buyBtnWrapp {
-    width: 200px;
-    height: 300px;
-    background-color: rgb(173, 151, 194);
+    width: 240px;
+    height: 360px;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.buyBtnDesc {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 21px;
 }
 
 .buyBtn {
-    width: 100px;
+    padding: 5px;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    cursor: pointer;
+    background-color:rgba(202, 202, 195);
+    margin-top: 5px;
+    width: 240px;
     height: 40px;
+    box-shadow: 0 5px 5px;
 }
 
 
 
 /* DESC */
 .descriptionWrapp {
-    border: 2px black solid;
-    margin: 30px 0 30px 0;
+    margin: 30px 0 100px 0;
+    font-weight: 300;
 }
 
 .bookDescriptin {
     font-size: 24px;
     margin-bottom: 30px;
+}
+
+
+
+@media (max-width: 768px) {
+    .bookDescBuyBttnWrapp {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bookImgDecsWrapp {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bookImg {
+        margin-right: 0;
+    }
+
+    .bookNameWrapp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .buyBtnWrapp {
+        height: 150px;
+    }
 }

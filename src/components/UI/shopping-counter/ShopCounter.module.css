@@ -1,0 +1,28 @@
+.shopIcon {
+    position: absolute;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 21px;
+}
+
+.basketIcon {
+    background-color: red;
+    left: calc(100% - 15px);
+    top: calc(0% - 8px);
+}
+
+.basketAdaptiveIcon {
+    background-color: red;
+    left: calc(100% - 3px);
+    top: calc(0% - 8px);
+}
+
+.burgerIcon {
+    background-color: red;
+    left: calc(100% - 12px);
+    top: calc(0% - 8px);
+}

@@ -8,15 +8,15 @@ const Comment = ({comment, comments}) => {
   const dispatch = useDispatch()
 
   function clearComment(id) {
-    const clearedListComments = comments.filter((comm) => comm.id !== id)
+    const clearedListComments = comments.filter((comm) => comm.commentId !== id)
     dispatch(deletComment(clearedListComments))
   }
 
   return (
     <div className={classes.commentWrapper}>
       <div className={classes.commentTitle}>{comment.title}</div>
-      <div>{comment.text}</div>
-      <button onClick={() => clearComment(comment.id)}>xxx</button>
+      <div className={classes.commentText}>{comment.text}</div>
+      <button className={classes.deletBtn} onClick={() => clearComment(comment.commentId)}>✖</button>
     </div>
   )
 }

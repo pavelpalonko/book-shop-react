@@ -1,15 +1,18 @@
 import React from "react";
 import Sort from "./UI/sortList/Sort";
 import SearchInput from "./UI/search-input/SearchInput";
+import { useSelector } from "react-redux";
 import { searchBooks, categoryBooks, sortedBooks } from "../store/actionCreators/filtActions";
 import { categoriesList, sortList, categoriesName, sortName } from "./stok/filtArrStock";
 
 const BookFilter = () => {
 
+  const category = useSelector(({ filtR }) => filtR.category)
+
   return (
-    <div className="header_wrapper">
+    <div className="filter_wrapper">
       <SearchInput action={searchBooks} />
-      <div className="wrapper_sort--category ">
+      <div className="sort_wrapper">
         <Sort
           action={sortedBooks}
           id='sort'
@@ -24,6 +27,7 @@ const BookFilter = () => {
           list={categoriesList}
           nameList={categoriesName}
         />
+        <div className="filter_shows-categiry">{category}</div>
       </div>
     </div>
   )

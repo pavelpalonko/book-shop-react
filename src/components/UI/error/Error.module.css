@@ -1,0 +1,8 @@
+.errWrapp {
+    margin-top: 200px;
+    min-height: calc(100vh - 380px);
+}
+
+.errImg {
+    margin-bottom: 20px;
+}

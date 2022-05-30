@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import classes from "./BookDescription.module.css"
 import { addBook } from "../../../store/actionCreators/basketActions";
 import { Link } from "react-router-dom";
-
+import MyButton from "../my-button/MyButton";
 
 const BookDescription = ({ currentBook }) => {
 
@@ -19,23 +19,26 @@ const BookDescription = ({ currentBook }) => {
 
           <img className={classes.bookImg} src={currentBook.imageUrl} alt='book'></img>
 
-          <div>
+          <div className={classes.bookNameWrapp}>
             <div className={classes.bookName}>{currentBook.bookName}</div>
             <div className={classes.bookAuthor}>{currentBook.authorName}</div>
-            <div className={classes.bookRaiting}>{currentBook.bookRating}</div>
+            <div className={classes.bookRaiting}>{`${currentBook.bookRating} ★ `}</div>
           </div>
 
         </div>
 
-        {
-          checking
-            ? <Link to='/basket-page' className={classes.buyBtnWrapp}>
-              <button className={classes.buyBtn} >GO to basket</button>
-            </Link>
-            : <div className={classes.buyBtnWrapp}>
-              <button className={classes.buyBtn} onClick={() => dispatch(addBook(currentBook))}>add to basket</button>
-            </div>
-        }
+        <div className={classes.buyBtnWrapp}>
+          <div className={classes.buyBtnDesc}>
+            <div>{`${currentBook.price} ₴`}</div>
+            <div>In stock ✔</div>
+          </div>
+
+          {
+            checking
+              ? <Link to='/basket-page'> <MyButton className={classes.buyBtn} >Go to basket</MyButton > </Link>
+              : <MyButton  className={classes.buyBtn} onClick={() => dispatch(addBook(currentBook))}>Add to basket</MyButton >
+          }
+        </div>
 
       </div>
 

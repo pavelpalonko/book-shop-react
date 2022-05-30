@@ -4,6 +4,7 @@
     align-items: center;
     font-weight: bold;
     position: relative;
+    margin-right: 10px;
     font-size: 20px;
     text-decoration: none;
     color: black;
@@ -14,15 +15,8 @@
     margin-top: 8px;
 }
 
-.basketCounter {
-    position: absolute;
-    font-size: 15px;
-    background-color: red;
-    left: 40px;
-    top: -5px;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    line-height: 21px;
+@media (max-width: 768px) {
+    .basketWrapper {
+        display: none;
+    }
 }

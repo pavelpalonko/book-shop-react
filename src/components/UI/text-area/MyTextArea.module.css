@@ -1,7 +1,8 @@
 .myTxt {
-    margin-top: 10px;
-    width: 100%;
-    border: 2px green solid;
     display: block;
+    width: 100%;
+    margin: 10px 0 10px 0;
     outline: none;
+    border: 3px solid rgb(202, 202, 195);
+    box-shadow: 0 3px 5px;
 }

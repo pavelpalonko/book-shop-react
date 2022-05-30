@@ -1,22 +1,44 @@
+.bookContainer {
+    width: 220px;
+    margin: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
 .bookWrapper {
-    border: 2px solid black;
-    margin: 10px;
-    width: 204px;
+    box-shadow: 0 10px 10px;
+}
+
+.bookContainer:hover {
+    transform: scale(1.04);
 }
 
 .bookImage {
-    width: 200px;
-    height: 300px;
+    width: 220px;
+    height: 320px;
 }
 
-.bookDescription {
+.bookPrice {
     display: flex;
     justify-content: space-around;
     text-align: center;
     font-size: 17px;
-    line-height: 18px;
     font-weight: bold;
-    background-color: rgb(233, 187, 128);
-    color: brown;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 18px;
+    padding: 3px;
+    background-color: rgba(202, 202, 195);
+    color: rgb(0, 0, 0);
+}
+
+.bookDescription {
+    height: 60px;
+    padding: 20px 0 0 5px;
+}
+
+.bookAuthor {
+    font-weight: 400;
+}
+
+.bookName {
+    font-weight: 800;
 }

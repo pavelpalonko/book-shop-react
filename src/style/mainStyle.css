@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
 }
 
 img {
@@ -16,37 +17,56 @@ img {
 }
 
 .App {
-    width: 1200px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 
+
 /* HEADER */
 .header {
     width: 100%;
     height: 100px;
-    /* background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(146,52,217,1) 100%); */
-    background-color: rgba(202, 202, 195);
+    background-color: rgb(202, 202, 195);
     display: flex;
     justify-content: space-around;
     align-items: center;
     box-shadow: 0 3px 3px;
     position: fixed;
+    z-index: 1;
 }
 
-.header_wrapper {
+.filter_wrapper {
     max-width: 600px;
     width: 100%;
     display: flex;
     justify-content:  space-between;
+    
 }
 
-.wrapper_sort--category {
+.sort_wrapper{
     display: flex;
     align-items: flex-end;
+    position: relative;
+    margin-right: 80px;
 }
+
+.filter_shows-categiry {
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    background-color: rgb(231, 231, 214);
+    top: calc(100% - 38px);
+    left: calc(100% - 15px);
+    font-size: 12px;
+    font-weight: 400;
+    padding: 2px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
 
 
 /* BOOKS-WRAPPER */
@@ -55,10 +75,17 @@ img {
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 200px;
-    min-height: 1200px;
+    max-width: 1600px;
+    min-height: calc(100vh - 380px);
 }
 
 
+
+/* FORM */
+.warning_label {
+    padding-left: 20px;
+    color: red;
+}
 
 
 
@@ -66,11 +93,40 @@ img {
 .footer {
     margin-top: 100px;
     width: 100%;
-    height: 100px;
-    /* background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(146,52,217,1) 100%); */
+    height: 80px;
     background-color: rgba(202, 202, 195);
-    border-radius: 20px 20px 0px 0px;
     box-shadow: 0 10px 10px;
     text-align: center;
     font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-weight: 300;
+}
+
+.footer img {
+    width: 50px;
+}
+
+@media (max-width: 768px) {
+    .sort_wrapper {
+        display: none;
+    }
+
+    .filter_wrapper {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .books_wrapper {
+        margin-top: 120px;
+    }
 }

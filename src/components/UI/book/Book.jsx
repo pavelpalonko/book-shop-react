@@ -1,12 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "./Book.module.css"
+import { useDispatch } from "react-redux";
+import { searchBooks } from "../../../store/actionCreators/filtActions";
 
 const Book = ({ img, name, price, rating, author, id }) => {
 
+  const dispatch = useDispatch()
   const route = useNavigate()
 
   const selectBook = () => { 
+    dispatch(searchBooks(''))
     route(`/books-shop/${id}`)
     window.scrollTo({
       top: 0,

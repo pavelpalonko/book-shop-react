@@ -23,7 +23,7 @@ const BurgerMenu = () => {
       <div className={classes.burgerBtn} onClick={e => setVisablMenu(!visableMenu)}>
         <span className={rootIconClasses.join(' ')}></span>
         <div className={rootShopCount.join('')}>
-          <ShopCounter styles={'burgerIcon'}/>
+          <ShopCounter styles={'burgerIcon'} />
         </div>
       </div>
       <div className={rootClasses.join(' ')}>
@@ -47,7 +47,6 @@ const BurgerMenu = () => {
         </div>
       </div>
     </>
-
   )
 }
 

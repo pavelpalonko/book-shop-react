@@ -9,14 +9,13 @@ ul {
     font-size: 20px;
     font-weight: 300;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-   
 }
 
 .subMenu {
     display: none;
     position: absolute;
-    padding: 2px;
     width: 160px;
+    padding: 2px;
     left: calc(100% - 130%); 
 }
 

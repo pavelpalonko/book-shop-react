@@ -38,7 +38,6 @@
 
 
 
-
 .calcWrapp {
     display: flex;
     flex-direction: column;
@@ -87,6 +86,8 @@
 .counerSymbol {
     margin: 0px 5px 0 5px;
 }
+
+
 
 .deletBtn {
     position: absolute;
